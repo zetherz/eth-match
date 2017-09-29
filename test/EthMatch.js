@@ -1,4 +1,3 @@
-import BigNumberInt from './helpers-my/BigNumberInt'
 import ether from './helpers/ether'
 import {advanceBlock} from './helpers/advanceToBlock'
 import {increaseTimeTo, duration} from './helpers/increaseTime'
