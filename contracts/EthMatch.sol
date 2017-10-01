@@ -74,7 +74,9 @@ contract EthMatch is Ownable, ERC23Contract {
 
   // send proceeds
   function pay(address _addr, uint256 _amount) internal {
-    require(_amount > 0);
+    if (_amount == 0) {
+      return; // amount actually could be 0, e.g. initial funding or if balance is totally drained
+    }
 
     uint256 payout = _amount.mul(PAYOUT_PCT).div(100);
     _addr.transfer(payout);
